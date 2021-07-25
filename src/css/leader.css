@@ -1,0 +1,20 @@
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------MEDIA STYLESHEETS----------*/
+@media (min-width: 1440px) { ... }
+@media (min-width: 1360px) and (max-width: 1440px) { ... }
+/*------------------------------*/
+@media (max-width: 1200px) { ... }
+@media (max-width: 992px) { ... }
+@media (max-width: 768px) { ... }
+@media (max-width: 576px) { ... }
