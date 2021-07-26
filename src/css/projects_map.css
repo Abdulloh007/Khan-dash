@@ -18,6 +18,7 @@
 /*ReSet styles*/
 .kh-row .kh-m-col:first-child{
     width: calc(70% - 27px);
+    overflow: overlay;
 }
 .kh-row .kh-m-col:last-child{
     margin-right: 0;
@@ -45,7 +46,7 @@
     border-radius: 10px;
     background-color: var(--white);
     height: fit-content;
-    z-index: 1
+    z-index: 100;
 }
 .kh-map_point-meaning span {
     display: block;
@@ -70,23 +71,112 @@
     border-radius: 50%;
     background-color: var(--orange);
 }
-.kh-map_point-meaning span.red::before{
+.kh-map_point-meaning span.red::before, .kh-mpiw_bottom span.red{
     background-color: var(--red);
 }
-.kh-map_point-meaning span.yellow::before{
+.kh-map_point-meaning span.yellow::before, .kh-mpiw_bottom span.yellow{
     background-color: var(--yellow);
 }
-.kh-map_point-meaning span.blue::before{
+.kh-map_point-meaning span.blue::before, .kh-mpiw_bottom span.blue{
     background-color: var(--blue);
 }
-.kh-map_point-meaning span.purple::before{
+.kh-map_point-meaning span.purple::before, .kh-mpiw_bottom span.purple{
     background-color: var(--purple);
 }
-.kh-map_point-meaning span.lilac::before{
+.kh-map_point-meaning span.lilac::before, .kh-mpiw_bottom span.lilac{
     background-color: var(--lilac);
 }
-.kh-map_point-meaning span.green::before{
+.kh-map_point-meaning span.green::before, .kh-mpiw_bottom span.green{
     background-color: var(--green);
+}
+/*Map Point Items*/
+.kh-map_points{
+    z-index: 99;
+}
+.kh-mp_item {
+    position: absolute;
+    top: 55vh;
+    left: 25vw;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--black);
+}
+.kh-map_points .kh-mp_item:nth-child(2) {
+    position: absolute;
+    top: 45vh;
+    left: 55vw;
+}
+.kh-mpi_anim{
+    position: absolute;
+    left: 3px;
+    bottom: 3px;
+    border-radius: 12px 12px 12px 2px;
+    overflow: hidden;
+}
+.kh-mpi_wrap {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 135px;
+    box-sizing: border-box;
+    border-radius: 12px 12px 12px 2px;
+    background-color: var(--white);
+}
+/* .kh-mp_item.close .kh-mpi_wrap{
+    width: auto;
+} */
+.kh-mpiw-content {
+    padding: 10px 10px 0;
+    overflow: hidden;
+}
+/* .kh-mp_item.close .kh-mpiw-content{
+    padding: 0;
+    height: 0;
+    width: 0;
+} */
+.kh-table_info {
+    margin-bottom: 5px;
+}
+.kh-table_info .kh-ti_item {
+    width: calc(50% - 2px);
+    margin-bottom: 0;
+    padding: 3.5px 5px;
+}
+.kh-mpi_project-info {
+    margin-top: 7px;
+    padding-top: 10px;
+    border-top: 1px solid #e9e9e9;
+}
+.kh-mpipi_item {
+    margin-bottom: 5px;
+}
+.kh-mpipi_item span b{
+    font-weight: 600;
+    color: var(--black);
+}
+.kh-mpi_project-info .kh-mpipi_item:last-child {
+    margin-bottom: 0;
+}
+.kh-mpipi_item svg {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+}
+.kh-mpiw_bottom{
+    width: max-content;
+    padding: 5px;
+}
+.kh-mpiw_bottom span{
+    display: block;
+    margin-right: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--orange);
+}
+.kh-mpiw_bottom span:last-child{
+    margin-right: 0;
 }
 /*--Project`s Map--*/
 .kh-mpl_meta {
@@ -135,7 +225,7 @@
     box-sizing: border-box;
     margin-bottom: 15px;
 }
-.kh-m_projects-list li{
+.kh-m_projects-list li:last-child{
     margin: 0;
 }
 .kh-mpl_details {
@@ -151,7 +241,7 @@
     width: 75%;
     height: fit-content;
 }
-.kh-mplp_status a {
+.kh-mplp_status a, .kh-pr_link {
     display: block;
     width: 100%;
     font-size: 12px;
@@ -159,7 +249,8 @@
     color: var(--black);
     text-transform: uppercase;
 }
-.kh-mplp_status p {
+.kh-pr_link{font-size: 10px;}
+.kh-mplp_status p, .kh-mpi_status {
     font-size: 7px;
     font-weight: 600;
     color: var(--white);
@@ -172,9 +263,10 @@
     background-color: var(--black);
     height: fit-content;
 }
-.kh-mplp_status p.red{
+.kh-mplp_status p.red, .kh-mpi_status.red{
     background-color: var(--red)
 }
+.kh-mpi_status{margin: 0 0 4px; width: 100%;text-align: center;}
 .kh-tasker-meta {
     margin-top: 15px;
 }
@@ -186,12 +278,15 @@
     color: var(--black);
     text-transform: uppercase;
 }
-.kh-tasker-meta span, .kh-project-meta span {
+.kh-tasker-meta span, .kh-project-meta span, .kh-mpipi_item span {
     display: block;
     margin-right: 5px;
     font-size: 7px;
     color: var(--dark-gray);
     text-transform: uppercase;
+}
+.kh-mpipi_item span{
+    margin-right: 0;
 }
 .kh-project-meta span{
     margin-bottom: 5px;
