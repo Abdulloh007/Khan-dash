@@ -3427,7 +3427,7 @@ var Chartist = {
       var pathCoordinates = [],
         pathData = [];
 
-      data.normalized.series[seriesIndex].forEach((value, valueIndex) => {
+      data.normalized.series[seriesIndex].forEach(function(value, valueIndex) {
         var p = {
           x: chartRect.x1 + axisX.projectValue(value, valueIndex, data.normalized.series[seriesIndex]),
           y: chartRect.y1 - axisY.projectValue(value, valueIndex, data.normalized.series[seriesIndex])
@@ -4226,7 +4226,7 @@ var Chartist = {
     }, 0);
 
     var donutWidth = Chartist.quantity(options.donutWidth);
-    if (donutWidth.unit === 'po') {
+    if (donutWidth.unit === '%') {
       donutWidth.value *= radius / 100;
     }
 

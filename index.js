@@ -40,6 +40,33 @@ window.addEventListener('DOMContentLoaded', function () {
     }
     linersBar.forEach(item => runLiners(item));
 
+    //Show More
+    const showMoreList = document.querySelectorAll('.kh-show_more');
+
+    function showMoreFromeList(elem) {
+        const showMoreItem = elem.querySelectorAll('.kh-show_more li'),
+        defaultHeight = elem.clientHeight;
+        elem.style.height = (showMoreItem[0].offsetHeight * parseInt(elem.dataset.show)) + parseInt(elem.dataset.show) + 'px';
+        elem.nextElementSibling.addEventListener('click', function () {
+            if (this.classList.contains('not_opened')) {
+                elem.style.height = defaultHeight + 'px';
+                this.classList.remove('not_opened');
+                this.innerHTML = `<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.00018 6L6.00018 1L11.0002 6" stroke="#D99478" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Меньше</span>`;
+            }else if (!this.classList.contains('not_opened')) {
+                elem.style.height = (showMoreItem[0].offsetHeight * parseInt(elem.dataset.show)) + parseInt(elem.dataset.show) + 'px';
+                this.classList.add('not_opened');
+                this.innerHTML = `<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 1L6 6L1 1" stroke="#D99478" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Больше</span>`;
+            }
+        })
+    }
+    showMoreList.forEach(item => showMoreFromeList(item));
+
     //Win-down
     const winDowns = document.querySelectorAll('.kh-liner-digs li');
 
@@ -68,32 +95,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }
     winDowns.forEach(item => winDowner(item));
 
-    //Show More
-    const showMoreList = document.querySelectorAll('.kh-show_more');
 
-    function showMoreFromeList(elem) {
-        const showMoreItem = elem.querySelectorAll('.kh-show_more li'),
-        defaultHeight = elem.clientHeight;
-        elem.style.height = (showMoreItem[0].offsetHeight * parseInt(elem.dataset.show)) + parseInt(elem.dataset.show) + 'px';
-        elem.nextElementSibling.addEventListener('click', function () {
-            if (this.classList.contains('not_opened')) {
-                elem.style.height = defaultHeight + 'px';
-                this.classList.remove('not_opened');
-                this.innerHTML = `<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.00018 6L6.00018 1L11.0002 6" stroke="#D99478" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span>Меньше</span>`;
-            }else if (!this.classList.contains('not_opened')) {
-                elem.style.height = (showMoreItem[0].offsetHeight * parseInt(elem.dataset.show)) + parseInt(elem.dataset.show) + 'px';
-                this.classList.add('not_opened');
-                this.innerHTML = `<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11 1L6 6L1 1" stroke="#D99478" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span>Больше</span>`;
-            }
-        })
-    }
-    showMoreList.forEach(item => showMoreFromeList(item));
 
 
 })

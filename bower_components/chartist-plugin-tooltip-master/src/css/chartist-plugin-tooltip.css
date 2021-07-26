@@ -4,7 +4,7 @@
     opacity: 1;
     min-width: 5em;
     padding: .5em;
-    background: #1d4a45;
+    background: var(--black);
     color: #ffffff;
     font-family: 'Mont', sans-serif;
     font-weight: 700;
@@ -25,7 +25,7 @@
     height: 0;
     margin-left: -15px;
     border: 15px solid transparent;
-    border-top-color: #1d4a45;
+    border-top-color: var(--black);
 }
 .ct-area, .ct-line {
     pointer-events: none;

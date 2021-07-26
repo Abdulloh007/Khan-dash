@@ -1,0 +1,178 @@
+/*FIlter*/
+form.kh-m-filter {
+    background-color: var(--white);
+    border-radius: 10px;
+    border: 1px solid #e9e9e9;
+    padding: 5px;
+    box-sizing: border-box;
+    align-items: center;
+    height: 35px;
+}
+form.kh-m-filter label {
+    height: 100%;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    background-color: var(--gray);
+    align-items: center;
+}
+label.kh-select{
+    position: relative;
+    width: calc(50% - 20px);
+}
+label.kh-select select{
+    width: 115%;
+    padding: 0 ;
+    background: transparent;
+    appearance: none;
+    border: none;
+    outline: none;
+    color: var(--black);
+    cursor: pointer;
+    font-size: 10px;
+    font-family: 'Mont', sans-serif;
+    font-weight: 600;
+    z-index: 1;
+}
+label.kh-select::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    right: 7px;
+    width: 7px;
+    height: 7px;
+    border-right: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
+    transform: rotate(45deg);
+}
+form.kh-m-filter .kh-reser_f{
+    margin-left: 0;
+}
+.kh-m-filter.kh-mt{
+    margin-bottom: 15px;
+}
+.kh-podryad {
+    position: relative;
+    width: 77px;
+    height: 77px;
+}
+.kh-pie_dig-smth{
+    height: 100%;
+}
+.kh-podryad .kh-pie_dig span {
+    top: 28.5px;
+    left: 28.5px;
+    width: 20px;
+    height: 20px;
+}
+.kh-podryad .kh-pie_dig::before {
+    top: 26.5px;
+    left: 26.5px;
+    width: 24px;
+    height: 24px;
+}
+/*Table Info*/
+.kh-table_info {
+    width: 100%;
+}
+.kh-table_info.filter {
+    width: calc(100% - 92px);
+}
+.kh-ti_item {
+    text-align: center;
+    width: calc(33.33335% - 4px);
+    padding: 12px 16px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: var(--gray);
+}
+.filter .kh-ti_item{
+    width: calc(50% - 4px);
+}
+.kh-ti_item span {
+    display: block;
+    padding: 3.5px 0;
+    font-size: 7px;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    border-radius: 6px;
+    background-color: var(--brown);
+    width: 100%;
+}
+.kh-ti_item.orange span{
+    background-color: var(--orange);
+}
+.kh-ti_item h4 {
+    margin: 0 0 7px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--black);
+}
+.filter .kh-ti_item h4 {
+    margin: 7px 0;
+}
+.kh-ti_item p {
+    margin: 0;
+    font-size: 7px;
+    color: var(--dark-gray);
+    text-transform: uppercase;
+}
+/*Cost Item*/
+.kh-cost_item .kh-i_meta{
+    width: 70%;
+}
+.kh-cost_item .kh-i_details{
+    width: 30%;
+}
+/*Filter One Fill*/
+label.kh-select.one{
+    width: calc(100% - 33px);
+}
+/*Stuff*/
+.kh-i_meta span {
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--black);
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    border: 1px solid var(--orange);
+}
+.kh-stuff_rate-list .kh-i_meta .kh-i_text-wrap{
+    width: calc(100% - 25px);
+}
+.kh-i_meta span.kh-invert{
+    background-color: var(--orange);
+    color: var(--white);
+    font-weight: 500;
+}
+/*Taskers*/
+.kh-tasker_list .kh-ld-header .kh-i_details {
+    width: calc(100% - 68px);
+}
+.kh-tasker_list .kh-ld-header .kh-i_details .kh-id_item {
+    padding-right: 4px;
+    margin-right: 3px;
+}
+.kh-tasker_list .kh-ld_desc{
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+.kh-tasker_list .kh-ld_desc, .kh-tasker_list .kh-work_table {
+    width: 100%;
+}
+.kh-work_table .kh-wt_item:last-child{
+    border-bottom: none;
+    padding-bottom: 0;
+}
+/**/
+p.kh-tiwcs_item {
+    width: fit-content;
+    padding: 3px 8px;
+    box-sizing: border-box;
+    color: var(--black);
+    font-weight: 600;
+    border-radius: 6px;
+    background-color: var(--gray);
+}
