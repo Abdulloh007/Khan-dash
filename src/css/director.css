@@ -176,3 +176,8 @@ p.kh-tiwcs_item {
     border-radius: 6px;
     background-color: var(--gray);
 }
+@media (max-width: 576px) {
+    .kh-m-filter .kh-reser_f {
+        height: 100%;
+    }
+}

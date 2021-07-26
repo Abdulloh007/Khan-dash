@@ -44,19 +44,45 @@ window.addEventListener('DOMContentLoaded', function () {
     const showMoreList = document.querySelectorAll('.kh-show_more');
 
     function showMoreFromeList(elem) {
-        const showMoreItem = elem.querySelectorAll('.kh-show_more li'),
-        defaultHeight = elem.clientHeight;
-        elem.style.height = (showMoreItem[0].offsetHeight * parseInt(elem.dataset.show)) + parseInt(elem.dataset.show) + 'px';
+        const showMoreItem = elem.querySelectorAll('.kh-show_more li');
+        let collapseHeight = 0;
+
+        for (let i = 0; i < parseInt(elem.dataset.show); i++) {
+            if (i == parseInt(elem.dataset.show) - 1) {
+                if (elem.classList.contains('kh-liner-digs') || elem.classList.contains('kh-tasker_list') || elem.classList.contains('kh-req_list')) {
+                    collapseHeight += 10 * (parseInt(elem.dataset.show) - 1);
+                }
+            }
+            collapseHeight += showMoreItem[i].offsetHeight;
+            elem.style.height = collapseHeight + 'px';
+            if (i == parseInt(elem.dataset.show) - 1) {
+                collapseHeight = 0;
+                break;
+            }
+        }
+
         elem.nextElementSibling.addEventListener('click', function () {
             if (this.classList.contains('not_opened')) {
-                elem.style.height = defaultHeight + 'px';
+                elem.style.height = elem.scrollHeight + 'px';
                 this.classList.remove('not_opened');
                 this.innerHTML = `<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.00018 6L6.00018 1L11.0002 6" stroke="#D99478" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <span>Меньше</span>`;
             }else if (!this.classList.contains('not_opened')) {
-                elem.style.height = (showMoreItem[0].offsetHeight * parseInt(elem.dataset.show)) + parseInt(elem.dataset.show) + 'px';
+                for (let i = 0; i < parseInt(elem.dataset.show); i++) {
+                    if (i == parseInt(elem.dataset.show) - 1) {
+                        if (elem.classList.contains('kh-liner-digs') || elem.classList.contains('kh-tasker_list') || elem.classList.contains('kh-req_list')) {
+                            collapseHeight += 10 * (parseInt(elem.dataset.show) - 1);
+                        }
+                    }
+                    collapseHeight += showMoreItem[i].offsetHeight;
+                    elem.style.height = collapseHeight + 'px';
+                    if (i == parseInt(elem.dataset.show) - 1) {
+                        collapseHeight = 0;
+                        break;
+                    }
+                }
                 this.classList.add('not_opened');
                 this.innerHTML = `<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11 1L6 6L1 1" stroke="#D99478" stroke-linecap="round" stroke-linejoin="round"/>
@@ -83,10 +109,12 @@ window.addEventListener('DOMContentLoaded', function () {
 
         winBtns.addEventListener('click', function () {
             if (!elem.classList.contains('win-down')) {
+                elem.parentNode.style.height = parseInt(elem.parentNode.style.height.split('px')[0]) + winData.clientHeight + 'px';
                 elem.classList.add('win-down');
                 elem.style.height = winData.clientHeight + winHeader.clientHeight + 'px';
                 this.innerHTML = `<svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 1H11.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>`
             }else if (elem.classList.contains('win-down')) {
+                elem.parentNode.style.height = parseInt(elem.parentNode.style.height.split('px')[0]) - winData.clientHeight + 'px';
                 elem.classList.remove('win-down');
                 elem.style.height = winHeader.clientHeight + 'px';
                 this.innerHTML = `<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 6H11.5" stroke="#ADA59F" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 0.5V11.5" stroke="#ADA59F" stroke-linecap="round" stroke-linejoin="round"/></svg>`
@@ -95,6 +123,23 @@ window.addEventListener('DOMContentLoaded', function () {
     }
     winDowns.forEach(item => winDowner(item));
 
+    //Sort down
+    // const sortDownBtn = document.querySelectorAll('.kh-sort_down');
+    // function sortDown(elem) {
+    //     let sortDownList = elem.parentNode.parentNode.querySelector('.kh-sort-list_down'),
+    //     sortListItems = sortDownList.querySelectorAll('li');
+    //
+    //
+    //     elem.addEventListener('click', function () {
+    //         for (let i = 0; i < sortListItems.length; i++) {
+    //             console.log(sortDownList);
+    //             console.log(sortListItems);
+    //             sortDownList.appendChild(sortDownList[i]);
+    //         }
+    //     })
+    // }
+    //
+    // sortDownBtn.forEach(item => sortDown(item));
 
 
 

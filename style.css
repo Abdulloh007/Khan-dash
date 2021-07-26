@@ -255,12 +255,13 @@ form.kh-filter label svg{
     width: 100%;
     height: 80px;
     z-index: 4;
-    background-color: var(--brown);
+    background-color: var(--gray);
     transition: all .2s ease;
 }
 .kh-mobile-nav.fix {
     position: fixed;
     animation: fade .2s ease;
+    box-shadow: 0px 0px 5px -2px var(--brown);
 }
 .kh-m-menu {
     position: fixed;
@@ -269,7 +270,7 @@ form.kh-filter label svg{
     width: 45vw;
     min-width: 320px;
     height: 100vh;
-    background: var(--black);
+    background: var(--gray);
     transition: all .4s ease;
     overflow-y: overlay;
     z-index: -1;
@@ -303,7 +304,7 @@ form.kh-filter label svg{
     display: block;
     height: 2px;
     width: 40px;
-    background: var(--white);
+    background: var(--orange);
     transition: all .4s ease;
     cursor: pointer;
     z-index: 11;
@@ -313,7 +314,7 @@ form.kh-filter label svg{
     position: absolute;
     width: 100%;
     height: 15px;
-    border-top: 2px solid var(--white);
+    border-top: 2px solid var(--orange);
     top: -15px;
     left: 0;
     transition: all .4s ease;
@@ -323,7 +324,7 @@ form.kh-filter label svg{
     position: absolute;
     width: 100%;
     height: 15px;
-    border-bottom: 2px solid var(--white);
+    border-bottom: 2px solid var(--orange);
     top: 0;
     left: 0;
     transition: all .4s ease;
@@ -562,8 +563,8 @@ h2.kh-ch_heading {
     content: attr(data-p_value);
     position: absolute;
     font-size: 8px;
-    top: 11.4px;
-    left: 9.6px;
+    top: 12px;
+    left: 11px;
 }
 .kh-btn_gray {
     margin-left: 10px;
@@ -641,7 +642,7 @@ h2.kh-ch_heading {
 }
 text.ct-label {
     fill: var(--white);
-    font-size: 11px;
+    font-size: 9px;
 }
 .kh-risks {
     width: 100%;
@@ -799,16 +800,16 @@ text.ct-label {
     border-top: 1px solid #e9e9e9;
 }
 .kh-acts .kh-pie_dig::before {
-    top: 34.5px;
-    left: 26.5px;
-    width: 24px;
-    height: 24px;
-}
-.kh-acts .kh-pie_dig span {
-    top: 36.5px;
+    top: 38.5px;
     left: 28.5px;
     width: 20px;
     height: 20px;
+}
+.kh-acts .kh-pie_dig span {
+    top: 39.5px;
+    left: 29.5px;
+    width: 18px;
+    height: 18px;
 }
 /*Dig Meaning*/
 .kh-dig-meaning {
@@ -847,7 +848,7 @@ text.ct-label {
     font-weight: 600;
 }
 .kh-id_item.red p {
-    color: var(--red);
+    color: var(--orange);
 }
 .kh-lt-tabination.kh-dbl-tabination .kh-col_header{
     border-bottom: none
@@ -923,6 +924,7 @@ text.ct-label {
 /*Request From Projects*/
 .kh-req_list li {
     padding: 12px;
+    box-sizing: border-box;
     margin-bottom: 10px;
     border-radius: 10px;
     border: 1px solid #e9e9e9;
@@ -966,6 +968,7 @@ text.ct-label {
     background-color: var(--orange);
 }
 .kh-req_list li h4 {
+    width: 100%;
     margin: 10px 0;
     font-size: 10px;
     font-weight: 700;
@@ -1089,7 +1092,7 @@ text.ct-label {
 /*---------MEDIA STYLESHEETS----------*/
 @media (max-width: 1200px) {
     /*ScrollBar*/
-    ::-webkit-scrollbar {
+    /* ::-webkit-scrollbar {
         width: 7px;
         height: 7px;
     }
@@ -1106,16 +1109,7 @@ text.ct-label {
         background-image: -webkit-linear-gradient(225deg, var(--dark-gray) 0%, var(--black) 100%);
         background-image: -o-linear-gradient(225deg, var(--dark-gray) 0%, var(--black) 100%);
         background-image: linear-gradient(225deg, var(--dark-gray) 0%, var(--black) 100%);
-    }
-    /*Header*/
-    .kh-logo svg {
-        height: 58px;
-        width: 45px;
-    }
-    .kh-logo h1 {
-        font-size: 16px;
-        margin-left: 10px;
-    }
+    } */
     .kh-menu li{
         margin-right: 15px;
     }
@@ -1130,7 +1124,7 @@ text.ct-label {
     }
 }
 @media (max-width: 992px) {
-    section.kh-main{
+    main.kh-main{
         padding-top: 80px;
     }
     /*Navigation*/
@@ -1162,7 +1156,7 @@ text.ct-label {
         height: fit-content;
         margin-right: 0;
         margin: 0 30px;
-        border-bottom: 1px solid #443a33;
+        border-bottom: 1px solid #988f88;
     }
     .kh-m-menu li:last-child{
         margin-right: 30px;
@@ -1187,34 +1181,122 @@ text.ct-label {
         padding: 0;
         align-items: center;
         justify-content: center;
-        background-color: var(--gray);
+        background-color: var(--dark-gray);
         border-radius: 50%;
         margin-left: 15px;
         transition: all .4s ease;
     }
     .kh-m_extra .kh-extra-link:hover{
-        background-color: var(--red);
+        background-color: var(--orange);
     }
     .kh-m_extra .kh-extra-link svg {
         height: 16px;
         width: 17px;
     }
     .kh-m_extra .kh-extra-link svg path{
-        stroke: var(--red);
+        stroke: var(--white);
         stroke-width: 2px;
         transition: all .4s ease;
     }
     .kh-m_extra .kh-extra-link:hover svg path{
         stroke: var(--gray)
     }
+    /*MAIN CONTENT*/
+    .kh-m-col {
+        width: calc(33.33335% - (54px / 3));
+        margin-right: 27px;
+    }
+    .kh-row .kh-m-col:nth-child(3) {
+        margin-right: 0;
+    }
+    .kh-row .kh-m-col:nth-child(4) {
+        margin-right: 0;
+        width: 100%;
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .kh-row .kh-m-col:nth-child(4) .kh-mc_elem {
+        width: calc(50% - 13.5px);
+        margin-right: 27px;
+    }
+    .kh-row .kh-m-col:nth-child(4) .kh-mc_elem:nth-child(2){
+        margin-top: 0;
+    }
+    .kh-row .kh-m-col:nth-child(4) .kh-mc_elem:nth-child(2n){
+        margin-right: 0;
+    }
+    form.kh-filter {
+        height: 40px;
+        margin: auto 0;
+    }
+    /*COl 2*/
+    .kh-id_item {
+        margin-right: 5px;
+    }
+    /*COl 3*/
+    .kh-state-text{
+        width: 70%;
+    }
+    .kh-state {
+        width: calc(30% - 5px);
+    }
+    /*COL 4*/
+    .kh-wait_list .kh-state-time {
+        width: calc(35% - 5px);
+    }
+    .kh-wait_list .kh-state-text {
+        width: 35%;
+    }
 }
-@media (max-width: 768px) { ... }
+@media (max-width: 768px) {
+    /*MAIN CONTENT*/
+    .kh-m-col {
+        width: calc(50% - 13.5px);
+        margin-right: 27px;
+    }
+    .kh-row .kh-m-col:nth-child(2) {
+        margin-right: 0;
+    }
+    .kh-row .kh-m-col:nth-child(4) {
+        margin-left: 25px;
+        width: calc(50% - 13.5px);
+        display: block;
+    }
+    .kh-row .kh-m-col:nth-child(4) .kh-mc_elem {
+        width: 100%;
+        margin-right: 0;
+    }
+    .kh-row .kh-m-col:nth-child(4) .kh-mc_elem:nth-child(2){
+        margin-top: 25px;
+    }
+}
 @media (max-width: 576px) {
     /*Navigation*/
     .kh-logo svg {
         height: 40px;
         width: 53px;
     }
+    form.kh-filter {
+        height: auto;
+        width: calc(100% - 110px);
+    }
+    form.kh-filter h4 {
+        width: 100%;
+    }
+    form.kh-filter label {
+        width: calc(100% - 45px);
+        height: 25px;
+        margin-left: 0;
+        padding: 2px 5px;
+        margin-top: 3px;
+    }
+    .kh-reser_f {
+        height: 25px;
+    }    
     .kh-humburger{
         width: 30px;
     }
@@ -1241,3 +1323,27 @@ text.ct-label {
         font-size: 12px;
         margin-right: 15px;
     }
+    /*MAIN CONTENT*/
+    .kh-m-col {
+        width: 100%;
+        margin-right: 0;
+    }
+    .kh-row .kh-m-col:nth-child(2) {
+        margin-right: 0;
+    }
+    .kh-row .kh-m-col:nth-child(4) {
+        margin-left: 0;
+        width: 100%;
+        /* display: block; */
+    }
+    .kh-row .kh-m-col:nth-child(4) .kh-mc_elem {
+        width: 100%;
+        margin-right: 0;
+    }
+    .kh-row .kh-m-col:nth-child(4) .kh-mc_elem:nth-child(2){
+        margin-top: 25px;
+    }
+    .kh-id_item {
+        margin-right: 25px;
+    }
+}

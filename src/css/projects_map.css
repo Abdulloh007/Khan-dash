@@ -123,18 +123,10 @@
     border-radius: 12px 12px 12px 2px;
     background-color: var(--white);
 }
-/* .kh-mp_item.close .kh-mpi_wrap{
-    width: auto;
-} */
 .kh-mpiw-content {
     padding: 10px 10px 0;
     overflow: hidden;
 }
-/* .kh-mp_item.close .kh-mpiw-content{
-    padding: 0;
-    height: 0;
-    width: 0;
-} */
 .kh-table_info {
     margin-bottom: 5px;
 }
@@ -304,4 +296,40 @@
     font-weight: 700;
     color: var(--black);
     text-transform: uppercase;
+}
+
+
+/*---------MEDIA STYLESHEETS----------*/
+@media (max-width: 1200px) { ... }
+@media (max-width: 992px) {
+    .kh-row .kh-m-col:first-child {
+        width: 50%;
+    }
+    .kh-row .kh-m-col:last-child {
+        width: calc(50% - 27px);
+    }
+}
+@media (max-width: 768px) {
+    .kh-row{
+        flex-direction: column-reverse;
+    }
+    .kh-row .kh-m-col:first-child {
+        margin-top: 25px;
+        width: 100%;
+    }
+    .kh-map_point-meaning{
+        width: 70%;
+    }
+    .kh-d_img{
+        height: 100vh;
+        width: auto;
+    }
+    .kh-row .kh-m-col:last-child {
+        width: 100%;
+    }
+}
+@media (max-width: 576px) {
+    .kh-row .kh-m-col:first-child {
+        display: none;
+    }
 }
